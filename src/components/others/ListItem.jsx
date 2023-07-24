@@ -9,6 +9,7 @@ function Listitem({ item }) {
   const { getCurrentList, deleteList } = useData();
   const [isEdit, setIsEdit] = useState(false);
   const { title, date, id } = item;
+  
   return (
     <>
       {isEdit ? (

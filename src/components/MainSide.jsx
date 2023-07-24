@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import AddNew from "./AddNew";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import AddNew from "./AddNew";
 import TaskItems from "./TaskItems";
 import { useData } from "../contexts/DataContext";
+import { Route, Routes } from "react-router-dom";
 
 function MainSide() {
   const { currentList, handleOpen, isOpen } = useData();
   const [percentage, setPercentage] = useState(0);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
+
   useEffect(() => {
     if (currentList) {
       if (currentList.tasks.length !== 0) {

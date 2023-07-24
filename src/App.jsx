@@ -1,11 +1,8 @@
 import React from "react";
-import ToDoApp from "./components/routes/ToDoApp";
 import { Routes, Route, Navigate } from "react-router-dom";
-import SignUp from "./components/routes/user/SignUp";
-import Login from "./components/routes/user/Login";
-import UserName from "./components/routes/user/UserName";
 import { useAuth } from "./contexts/AuthContext";
-import Home from "./components/Home";
+import { ToDoApp, SignUp, Login, UserName, Home } from './pages'
+
 function App() {
   const { currentUser } = useAuth();
   const token = localStorage.getItem("data");
@@ -14,7 +11,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/"
+          path="/*"
           element={token ? <ToDoApp /> : <Navigate to="/home" />}
         />
         <Route path="/home" element={<Home />} />

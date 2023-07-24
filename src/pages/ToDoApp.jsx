@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from "../Sidebar";
-import MainSide from "../MainSide";
+import Sidebar from "../components/Sidebar";
+import MainSide from "../components/MainSide";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 function ToDoApp() {
   return (
